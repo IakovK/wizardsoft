@@ -1,0 +1,38 @@
+// SortServer.idl : IDL source for SortServer
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (SortServer.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(009dd3a6-df2f-408d-af0c-18ed054e12bd),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ISorter : IDispatch
+{
+	[id(1)] HRESULT SortFile([in] BSTR input, [in] BSTR output, [in] BYTE mode);
+	[id(2)] HRESULT Cancel();
+};
+[
+	uuid(30e4c862-ef57-4400-80ad-7b07ea29fe21),
+	version(1.0),
+]
+library SortServerLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(ef25e41b-8c84-400f-abfc-14be1d410113)
+	]
+	coclass Sorter
+	{
+		[default] interface ISorter;
+	};
+};
+
+import "shobjidl.idl";

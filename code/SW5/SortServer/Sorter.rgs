@@ -1,0 +1,26 @@
+HKCR
+{
+	SW5.Sorter.1 = s 'Sorter class'
+	{
+		CLSID = s '{ef25e41b-8c84-400f-abfc-14be1d410113}'
+	}
+	SW5.Sorter = s 'Sorter class'
+	{		
+		CurVer = s 'SW5.Sorter.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {ef25e41b-8c84-400f-abfc-14be1d410113} = s 'Sorter class'
+		{
+			ProgID = s 'SW5.Sorter.1'
+			VersionIndependentProgID = s 'SW5.Sorter'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Free'
+			}
+			TypeLib = s '{30e4c862-ef57-4400-80ad-7b07ea29fe21}'
+			Version = s '1.0'
+		}
+	}
+}

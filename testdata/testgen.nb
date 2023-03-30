@@ -1,0 +1,102 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3498,         94]
+NotebookOptionsPosition[      3134,         80]
+NotebookOutlinePosition[      3545,         96]
+CellTagsIndexPosition[      3502,         93]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"basePart", "=", "\"\<I:\\\\data\\\\test\>\""}], ";", 
+  RowBox[{"srcRoot", "=", "\"\<input\>\""}], ";", 
+  RowBox[{"dstRoot", "=", "\"\<output\>\""}], ";", 
+  RowBox[{"maxCount", "=", 
+   RowBox[{"10000000000", "/", "4"}]}], ";", 
+  RowBox[{"maxCount", "=", 
+   RowBox[{"10000000", "/", "4"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"partsCount", "=", "1000"}], ";", 
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<maxCount=\>\"", ",", "maxCount"}], "]"}], ";", 
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "1"}], ",", 
+    RowBox[{"i", "<=", "10"}], ",", 
+    RowBox[{"i", "++"}], ",", 
+    RowBox[{
+     RowBox[{"Print", "[", 
+      RowBox[{"\"\<i=\>\"", ",", "i"}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"nameIn", "=", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{"basePart", ",", "srcRoot", ",", 
+         RowBox[{"\"\<rrr-\>\"", "<>", 
+          RowBox[{"ToString", "[", "i", "]"}], "<>", "\"\<.dat\>\""}]}], 
+        "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"f", "=", 
+      RowBox[{"OpenWrite", "[", 
+       RowBox[{"nameIn", ",", 
+        RowBox[{"BinaryFormat", "->", "True"}]}], "]"}]}], ";", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"j", "=", "1"}], ",", 
+       RowBox[{"j", "<=", "partsCount"}], ",", 
+       RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"d", "=", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"4", " ", "1024", " ", "1024", " ", "1024"}], "-", "1"}], 
+           ",", 
+           RowBox[{"maxCount", "/", "partsCount"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"BinaryWrite", "[", 
+         RowBox[{"f", ",", "d", ",", "\"\<UnsignedInteger32\>\""}], "]"}]}]}],
+       "]"}], ";", 
+     RowBox[{"Close", "[", "f", "]"}]}]}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.880776068108675*^9, 3.880776068109672*^9}, {
+   3.8807771184466553`*^9, 3.8807771509019814`*^9}, {3.880780026475556*^9, 
+   3.880780061353612*^9}, {3.8807802700642996`*^9, 3.880780273018303*^9}, 
+   3.8807803158886304`*^9, 3.880780361757319*^9, {3.8807851464261227`*^9, 
+   3.8807851475371256`*^9}, {3.8808196288026066`*^9, 3.880819637521593*^9}, 
+   3.8808198512716074`*^9, {3.8808202269332533`*^9, 3.880820349320513*^9}, 
+   3.880820392335987*^9, {3.880820838739601*^9, 3.880820839321601*^9}, {
+   3.880883962915309*^9, 3.8808839653073144`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"1080ea76-f857-4cf9-849f-6599c1a2319f"]
+},
+WindowSize->{569.25, 624.75},
+WindowMargins->{{429, Automatic}, {17.25, Automatic}},
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"780a8ebc-1651-446c-94fd-0bbb39b48d75"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2572, 58, 314, "Input",ExpressionUUID->"1080ea76-f857-4cf9-849f-6599c1a2319f"]
+}
+]
+*)
+
